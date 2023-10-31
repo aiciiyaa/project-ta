@@ -12,13 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('routes', function (Blueprint $table) {
-            $table->id('route_id');
-            $table->unsignedBigInteger('delivery_id');
-            $table->foreign('delivery_id')->references('delivery_id')->on('deliveries');
-            $table->string('start_point'); 
-            $table->string('destination_point'); 
-            $table->decimal('distance', 10, 2);
-            $table->string('travel_time');
+            $table->id();
+           
             $table->timestamps();
         });
     }
